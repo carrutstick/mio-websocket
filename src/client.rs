@@ -179,7 +179,7 @@ impl WebSocketClient {
                     _ => {}
                 }
 
-                if (self.outgoing.len() > 0) {
+                if self.outgoing.len() > 0 {
                     self.interest.remove(EventSet::readable());
                     self.interest.insert(EventSet::writable());
                 }
